@@ -13,4 +13,5 @@ export interface Country {
         population:string;
         cca3:string;
         borders:string;
+       
 }

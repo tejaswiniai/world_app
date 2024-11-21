@@ -22,7 +22,17 @@
           </v-card-text>
           <v-card-text >
             <p>Top Level Domain: {{ country.tld[0] }}</p>
-            <p>Currencies: {{ country.currencies.name }}</p>
+            <p>Currencies: 
+              <span v-if="country.currencies">
+                <span
+                  v-for="(code, idx) in Object.keys(country.currencies)"
+                  :key="idx"
+                >
+                  {{ country.currencies[code].name }} 
+                  
+                </span>
+              </span>       
+            </p>       
             <p>Languages: {{ country.languages.eng }}</p>
           </v-card-text>
           </div>
@@ -55,7 +65,7 @@
       const router = useRouter();
       const countries = ref<Country[]>([]);
       const borderCountries = ref<string[]>([]);
-
+       
       watch(
       () => route.params.name,
       () => {
@@ -68,13 +78,17 @@
         try {
           const response = await axios.get(`https://restcountries.com/v3.1/name/${countryName}`);
           country.value = response.data[0]; 
+        
+        
           getBorderCountries(country.value.cca3)
           console.log(country.value)
+          
         } catch (err) {
           error.value = 'Country not found or an error occurred';
         } finally {
           loading.value = false;
         }
+       
       };
 
       const countryList = () => {
