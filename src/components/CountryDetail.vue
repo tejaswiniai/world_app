@@ -33,7 +33,18 @@
                 </span>
               </span>       
             </p>       
-            <p>Languages: {{ country.languages.eng }}</p>
+            <p>Languages: 
+
+              <span v-if="country.languages">
+                <span
+                  v-for="(code, idx) in Object.keys(country.languages)"
+                  :key="idx"
+                >
+                <span v-if="Object.keys(country.languages).length == 1"> {{ country.languages[code]  }} </span>  
+                <span v-else> {{ country.languages[code] + ', '}}</span>  
+                </span>
+              </span>       
+            </p>
           </v-card-text>
           </div>
           <div class="border-countries">
