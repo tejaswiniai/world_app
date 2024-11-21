@@ -157,7 +157,7 @@ body {
     gap: 70px;
     @media (max-width: 768px) {
         flex-direction: column;
-        width: 50vw;
+        width: 90vw;
     }
 }
 </style>
