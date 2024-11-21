@@ -58,8 +58,8 @@
 
       watch(
       () => route.params.name,
-      (newName) => {
-        fetchCountryDetails(newName);
+      () => {
+        fetchCountryDetails();
       }
     );
       const fetchCountryDetails = async () => {

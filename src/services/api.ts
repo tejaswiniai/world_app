@@ -1,5 +1,5 @@
 
-import axios, { AxiosError, type AxiosResponse } from "axios";
+import axios, { AxiosError } from "axios";
 
 import { IternalServerError, NotFoundError, ServiceUnavailableError, UnauthorizedError } from "../model/errors";
 
