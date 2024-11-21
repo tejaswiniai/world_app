@@ -40,7 +40,7 @@ body {
     border-bottom: 2px solid grey;
     background-color: rgb(var(--v-theme-secondary)) !important;
     @media (max-width: 768px) {
-        flex-direction: column;
+        flex-direction: row;
         width: 100vw;
         justify-content: flex-start;
         text-align: left;
@@ -49,6 +49,11 @@ body {
 .where-text{
     font-weight: 800;
     color: rgb(var(--v-theme-primary)) !important;
+
+    @media (max-width: 768px) {
+        font-size: 11px;
+    }
+
 }
 
 .theme-block {

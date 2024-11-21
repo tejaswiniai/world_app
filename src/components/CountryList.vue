@@ -160,6 +160,7 @@ body {
     
 
 }
+
 .search-filter {
     display: flex;
     flex-direction: row;
@@ -169,6 +170,7 @@ body {
         width: 50vw;
         justify-content: flex-start;
         text-align: left;
+        gap: 40px;
     }
 }
 .select-filter{
@@ -204,6 +206,9 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     align-items: center;
+    @media (max-width: 768px) {
+        width: 50%;
+    }
     
 }
 .countries-grid {
