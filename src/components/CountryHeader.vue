@@ -42,7 +42,7 @@ body {
     @media (max-width: 768px) {
         flex-direction: row;
         width: 100vw;
-        justify-content: flex-start;
+        justify-content:  space-between;
         text-align: left;
     }
 }
@@ -59,5 +59,6 @@ body {
 .theme-block {
     color: rgb(var(--v-theme-primary)) !important;
     background-color: rgb(var(--v-theme-secondary)) !important;
+    padding-right: 20px;
 }
 </style>

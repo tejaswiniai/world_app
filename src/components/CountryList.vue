@@ -22,34 +22,34 @@
                     
             </div>
             <div class="select-filter">    
-            <v-select  :items="regions" label="Filter by Region" v-model="filterByRegion" @update:modelValue="filterRegion" variant="solo-inverted"></v-select>
+                <v-select  :items="regions" label="Filter by Region" v-model="filterByRegion" @update:modelValue="filterRegion" variant="solo-inverted"></v-select>
+            </div>
         </div>
-    </div>
-    <v-alert v-if="error" type="error">{{ error }}</v-alert>
-    <div v-else class="country-container">
-    <v-card
-    class="mx-auto country-card"
-    v-for="country in countries" :key="country.name.common"
-        @click="showDetail(country.name.common)"
-    >
-        <v-img class="flag-img lazyload" :src="country.flags.png" cover></v-img>
+        <v-alert v-if="error" type="error">{{ error }}</v-alert>
+        <div v-else class="country-container">
+            <v-card
+            class="mx-auto country-card"
+            v-for="country in countries" :key="country.name.common"
+                @click="showDetail(country.name.common)"
+            >
+                <v-img class="flag-img lazyload" :src="country.flags.png" cover></v-img>
 
-            <v-card-title>
-            {{ country.name.common }}
-            </v-card-title>
-            <v-card-subtitle>
-            <span class="country-subtitle">Population:</span> {{ country.population }}
-            </v-card-subtitle>
-            <v-card-subtitle>
-            <span class="country-subtitle">Region:</span>  {{ country.region }}
-            </v-card-subtitle>
-            <v-card-subtitle>
-            <span class="country-subtitle">Capital:</span>  {{ country.capital ? country.capital[0] : 'No capital' }}
-            </v-card-subtitle>
-            </v-card>
+                    <v-card-title>
+                    {{ country.name.common }}
+                    </v-card-title>
+                    <v-card-subtitle>
+                    <span class="country-subtitle">Population:</span> {{ country.population }}
+                    </v-card-subtitle>
+                    <v-card-subtitle>
+                    <span class="country-subtitle">Region:</span>  {{ country.region }}
+                    </v-card-subtitle>
+                    <v-card-subtitle>
+                    <span class="country-subtitle">Capital:</span>  {{ country.capital ? country.capital[0] : 'No capital' }}
+                    </v-card-subtitle>
+                </v-card>
+            </div>
         </div>
     </div>
-</div>
 </template>
 <script lang="ts">
 import { defineComponent, ref, onMounted  } from 'vue';
@@ -167,7 +167,7 @@ body {
     justify-content: space-between;
     @media (max-width: 768px) {
         flex-direction: column;
-        width: 50vw;
+        width: 80%;
         justify-content: flex-start;
         text-align: left;
         gap: 40px;
@@ -194,7 +194,9 @@ body {
     font-weight: 800;
 }
 .countries-list {
-    padding: 1rem;
+    padding: 20px;
+    width: 100%;
+    
 }
 .country-container {
     width: 100%;
@@ -207,7 +209,7 @@ body {
     scrollbar-width: none;
     align-items: center;
     @media (max-width: 768px) {
-        width: 50%;
+        width: 90%;
     }
     
 }
